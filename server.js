@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs("mean_experiments", ["serviceClients"]);
+var db = mongojs("mongodb://admin:DGyHedwqyyk6@127.2.104.2:27017/mean_experiments", ["serviceClients"]);
 
 
 app.use(express.static(__dirname + '/public'));
