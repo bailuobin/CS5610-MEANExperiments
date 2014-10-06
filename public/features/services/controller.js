@@ -30,6 +30,7 @@ function ServicesCtrl($scope, $http){
         $http.get("/serviceClients/" + id)
         .success(function (response) {
             $scope.currentServiceClient = response;
+            console.log(response + " from controller.js");
         });
     };
 
