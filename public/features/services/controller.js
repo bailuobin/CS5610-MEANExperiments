@@ -26,6 +26,7 @@ function ServicesCtrl($scope, $http){
         });
     };
 
+
     $scope.select = function (id) {
 
         console.log(id);

@@ -37,9 +37,10 @@ app.delete("/serviceClients/:id", function (req, res) {
 app.get("/serviceClients/:id", function (req, res) {
     var id = req.params.id;
     console.log(id);
-    db.serviceClients.findOne({ _id: mongojs.ObjectId(id) },
-        function (err, doc) {
 
+    db.serviceClients.findOne({ _id: mongojs.ObjectId(id)},
+        function (err, doc) {
+            console.log(err);
             res.json(doc);
         });
 });
@@ -47,7 +48,8 @@ app.get("/serviceClients/:id", function (req, res) {
 //select 
 app.put("/serviceClients/:id", function (req, res) {
     var id = req.params.id;
-    //console.log(id);
+    console.log(id);
+
     db.serviceClients.findAndModify({
         query: { _id: mongojs.ObjectId(id) },
         update: { $set: { name: req.body.name } },
