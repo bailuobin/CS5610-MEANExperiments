@@ -27,10 +27,13 @@ function ServicesCtrl($scope, $http){
     };
 
     $scope.select = function (id) {
+
+        console.log(id);
+
         $http.get("/serviceClients/" + id)
         .success(function (response) {
             $scope.currentServiceClient = response;
-            console.log(response + " from controller.js");
+            console.log(response);
         });
     };
 
