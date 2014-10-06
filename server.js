@@ -36,7 +36,7 @@ app.delete("/serviceClients/:id", function (req, res) {
 //select 
 app.get("/serviceClients/:id", function (req, res) {
     var id = req.params.id;
-    //console.log(id);
+    console.log(id);
     db.serviceClients.findOne({ _id: mongojs.ObjectId(id) },
         function (err, doc) {
             res.json(doc);
