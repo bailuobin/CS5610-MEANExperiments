@@ -39,6 +39,7 @@ app.get("/serviceClients/:id", function (req, res) {
     console.log(id);
     db.serviceClients.findOne({ _id: mongojs.ObjectId(id) },
         function (err, doc) {
+
             res.json(doc);
         });
 });
