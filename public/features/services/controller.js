@@ -12,7 +12,7 @@ function ServicesCtrl($scope, $http){
     };
     
     $scope.create = function () {
-        $http.post("/serviceClients", $scope.serviceClient)
+        $http.post("/serviceClients", $scope.currentServiceClient)
         .success(function (response) {
             $scope.all();
         });       
@@ -29,12 +29,12 @@ function ServicesCtrl($scope, $http){
     $scope.select = function (id) {
         $http.get("/serviceClients/" + id)
         .success(function (response) {
-            $scope.serviceClient = response;
+            $scope.currentServiceClient = response;
         });
     };
 
     $scope.update = function () {
-        $http.put("/serviceClients/" + $scope.serviceClient._id, $scope.serviceClient)
+        $http.put("/serviceClients/" + $scope.currentServiceClient._id, $scope.currentServiceClient)
         .success(function (response) {
             $scope.all();
         });
