@@ -58,5 +58,5 @@ app.controller(
         $scope.all();
 
 
-    });
+    }]);
 
