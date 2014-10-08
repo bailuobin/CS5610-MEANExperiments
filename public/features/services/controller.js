@@ -1,6 +1,6 @@
 app.controller(
     "ApplicationsCtrl",  
-    function ApplicationsCtrl($scope, $http) {
+    [ "$scope", "$http", function ($scope, $http) {
         console.log("Hello From ServiceController");
         //$scope.message = "Hello World From Controller";
 
