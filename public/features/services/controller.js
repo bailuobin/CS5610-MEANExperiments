@@ -8,11 +8,11 @@ function ServicesCtrl($scope, $http){
 
     $scope.all = function () {
         //get all
-        $http.get("/serviceClients").success($scope.renderServiceClients);
+        $http.get("/applications").success($scope.renderServiceClients);
     };
     
     $scope.create = function () {
-        $http.post("/serviceClients", $scope.currentServiceClient)
+        $http.post("/applications", $scope.currentServiceClient)
         .success(function (response) {
             $scope.all();
         });       
@@ -20,7 +20,7 @@ function ServicesCtrl($scope, $http){
 
 
     $scope.remove = function (id) {
-        $http.delete("/serviceClients/" + id)
+        $http.delete("/applications/" + id)
         .success(function (response) {
             $scope.all();
         });
@@ -31,7 +31,7 @@ function ServicesCtrl($scope, $http){
 
         console.log(id);
 
-        $http.get("/serviceClients/" + id)
+        $http.get("/applications/" + id)
         .success(function (response) {
             $scope.currentServiceClient = response;
             console.log(response);
@@ -39,7 +39,7 @@ function ServicesCtrl($scope, $http){
     };
 
     $scope.update = function () {
-        $http.put("/serviceClients/" + $scope.currentServiceClient._id, $scope.currentServiceClient)
+        $http.put("/applications/" + $scope.currentServiceClient._id, $scope.currentServiceClient)
         .success(function (response) {
             $scope.all();
         });
